@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
@@ -19,14 +18,14 @@ import java.util.ArrayList;
 public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyViewHolder>{
 
     private ArrayList<Information> data;
-    private Context context;
-    private LayoutInflater inflater;
+    private Context mcontext;
+    public LayoutInflater inflater;
 
     public MyCustomAdapter(Context context, ArrayList<Information> data) {
 
-        this.context = context;
+        mcontext = context;
         this.data = data;
-        inflater = LayoutInflater.from(context);
+        inflater = LayoutInflater.from(mcontext);
     }
 
 
@@ -41,7 +40,7 @@ public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyCustomAdapter.MyViewHolder holder,final int position) {
-        Picasso.with(context).load(new Information().imageID).into(holder.imageView);
+        Picasso.with(mcontext).load(new Information().imageID).into(holder.imageView);
     }
 
     @Override
