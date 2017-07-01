@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 /**
@@ -39,7 +41,7 @@ public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyCustomAdapter.MyViewHolder holder,final int position) {
-        holder.imageView.setImageResource(data.get(position).imageID);
+        Picasso.with(context).load(new Information().imageID).into(holder.imageView);
     }
 
     @Override

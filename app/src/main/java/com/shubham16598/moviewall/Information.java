@@ -5,6 +5,6 @@ package com.shubham16598.moviewall;
  */
 
 public class Information {
-    public int imageID;
+    public String imageID;
 
 }
