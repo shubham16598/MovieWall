@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         StringBuilder jsonString = new StringBuilder();
         HttpURLConnection conn;
         public String BASE_POSTER_URL = "http://image.tmdb.org/t/p/w342/";
+        public String BACK_POSTER_DETAIL = "http://image.tmdb.org/t/p/w500/";
         @Override
         protected ArrayList<Information> doInBackground(Object... voids) {
             try {
@@ -125,8 +126,18 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0;i<result.length();i++){
                     JSONObject currentMovie = result.getJSONObject(i);
                     String posterPath = currentMovie.getString("poster_path");
+                    String synopsis = currentMovie.getString("overview");
+                    Float rating = Float.valueOf(currentMovie.getString("vote_average"));
+                    String backposter = currentMovie.getString("backdrop_path");
+                    String releasedate = currentMovie.getString("release_date");
+                    String originaltitle = currentMovie.getString("original_title");
                     Information current = new Information();
                     current.imageID = BASE_POSTER_URL+posterPath;
+                    current.synopsis = synopsis;
+                    current.rating = rating;
+                    current.backPoster = BASE_POSTER_URL+backposter;
+                    current.releaseDate = releasedate;
+                    current.originalTitle = originaltitle;
                     data.add(current);
                 }
             } catch (JSONException e) {
@@ -143,10 +154,6 @@ public class MainActivity extends AppCompatActivity {
             mrecyclerView = (RecyclerView) findViewById(R.id.recycleView);
             mrecyclerView.setAdapter(adapter);
             mrecyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this,2));
-
-
-
-
         }
     }
 
