@@ -1,9 +1,6 @@
 package com.shubham16598.moviewall;
-
-import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.renderscript.Sampler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
