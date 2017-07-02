@@ -13,9 +13,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorPrimary">@android:color/primary_text_dark</item>
+        <item name="android:textColorPrimary">?android:attr/colorForegroundInverse</item>
         <item name="android:textColorSecondary">@color/colorAccent</item>
         <item name="android:textColorSecondaryInverse">@android:color/background_dark</item>
+        <item name="android:textColorPrimaryInverse">@android:color/black</item>
+        <item name="android:windowBackground">?android:attr/statusBarColor</item>
+        <item name="android:colorBackground">@color/colorPrimaryDark</item>
+        <item name="android:itemBackground">@color/colorPrimary</item>
     </style>
 </resources>
 
