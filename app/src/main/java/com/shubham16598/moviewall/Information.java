@@ -6,5 +6,11 @@ package com.shubham16598.moviewall;
 
 public class Information {
     public String imageID;
+    public String toString(){
+        return "Image : " + imageID ;
+    }
 
+    public String getImageID() {
+        return imageID;
+    }
 }

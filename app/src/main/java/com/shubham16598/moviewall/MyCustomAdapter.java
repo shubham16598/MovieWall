@@ -18,14 +18,14 @@ import java.util.ArrayList;
 public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyViewHolder>{
 
     private ArrayList<Information> data;
-    private Context mcontext;
+    private Context context;
     public LayoutInflater inflater;
 
     public MyCustomAdapter(Context context, ArrayList<Information> data) {
 
-        mcontext = context;
+        this.context = context;
         this.data = data;
-        inflater = LayoutInflater.from(mcontext);
+        inflater = LayoutInflater.from(context);
     }
 
 
@@ -37,10 +37,10 @@ public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyView
 
         return holder;
     }
-
     @Override
     public void onBindViewHolder(MyCustomAdapter.MyViewHolder holder,final int position) {
-        Picasso.with(mcontext).load(new Information().imageID).into(holder.imageView);
+        Information getimage = data.get(position);
+        Picasso.with(context).load(getimage.getImageID()).into(holder.imageView);
     }
 
     @Override
