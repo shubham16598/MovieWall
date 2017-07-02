@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,11 +37,35 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public final static String BASE_URL ="api.themoviedb.org";
-    public final static String PATH ="3";
-    public final static String PATH1 = "movie";
-    public final static String SORT ="popular";
-    public final static String API_KEY = "05947c19dcc1963b0c0e6fcb66a32aef";
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.sort,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.popularity:
+                SORT = "popular";
+                new Fetchdata().execute();
+                return true;
+            case R.id.top_rated:
+                SORT = "top_rated";
+                new Fetchdata().execute();
+                return true;
+            default:
+                new Fetchdata().execute();
+                return true;
+        }
+    }
+
+    public static String BASE_URL ="api.themoviedb.org";
+    public static String PATH ="3";
+    public static String PATH1 = "movie";
+    public static String SORT ="popular";
+    public static String API_KEY = "05947c19dcc1963b0c0e6fcb66a32aef";
 
 
     public static URL buildUrl() {
@@ -156,5 +183,6 @@ public class MainActivity extends AppCompatActivity {
             mrecyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this,2));
         }
     }
+
 
 }
