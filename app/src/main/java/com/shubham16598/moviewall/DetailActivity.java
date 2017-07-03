@@ -2,6 +2,7 @@ package com.shubham16598.moviewall;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -40,5 +41,9 @@ public class DetailActivity extends AppCompatActivity {
         }catch (Exception e){
             Log.i("onCreate: ","sorry");
         }
+        TextView sy = (TextView)findViewById(R.id.heading);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),"fonts/Fresca-Regular.ttf");
+        synopsis.setTypeface(custom_font);
+        sy.setTypeface(custom_font);
     }
 }
