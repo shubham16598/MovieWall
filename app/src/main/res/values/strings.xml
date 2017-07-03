@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MovieWall</string>
+    <string name="poster_thumbnail">Poster Thumbnail</string>
+    <string name="background_poster_image">Background Poster Image</string>
 </resources>
