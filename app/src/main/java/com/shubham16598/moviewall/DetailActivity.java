@@ -43,11 +43,15 @@ public class DetailActivity extends AppCompatActivity {
         synopsis = (TextView)findViewById(R.id.synopsis);
         rating = (TextView)findViewById(R.id.rating);
         releasedate = (TextView)findViewById(R.id.release_date);
+
+        Bundle bundle = getIntent().getExtras();
+        float rating1 = bundle.getFloat("rating");
+        String rating2 = Float.toString(rating1);
         try {
             getSupportActionBar().setTitle(getIntent().getStringExtra("originaltitle"));
             synopsis.setText(getIntent().getStringExtra("synopsis"));
             releasedate.setText(getIntent().getStringExtra("releasedate"));
-            rating.setText(getIntent().getStringExtra("rating"));
+            rating.setText(rating2);
             Picasso.with(context).load(getIntent().getStringExtra("backposter")).placeholder(R.drawable.placeholder).into(back_image);
             Picasso.with(context).load(getIntent().getStringExtra("poster")).into(posterimage);
         }catch (Exception e){
