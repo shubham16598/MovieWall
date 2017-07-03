@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
                     current.imageID = BASE_POSTER_URL+posterPath;
                     current.synopsis = synopsis;
                     current.rating = rating;
-                    current.backPoster = BASE_POSTER_URL+backposter;
+                    current.backPoster = BACK_POSTER_DETAIL+backposter;
                     current.releaseDate = releasedate;
                     current.originalTitle = originaltitle;
                     data.add(current);
