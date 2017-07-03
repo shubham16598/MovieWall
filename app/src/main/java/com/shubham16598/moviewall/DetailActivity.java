@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,5 +46,18 @@ public class DetailActivity extends AppCompatActivity {
         Typeface custom_font = Typeface.createFromAsset(getAssets(),"fonts/Fresca-Regular.ttf");
         synopsis.setTypeface(custom_font);
         sy.setTypeface(custom_font);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id==android.R.id.home) {
+            finish();
+        }
+        return true;
     }
 }
