@@ -8,11 +8,18 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.fujiyuu75.sequent.Animation;
+import com.fujiyuu75.sequent.Sequent;
 import com.squareup.picasso.Picasso;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 public class DetailActivity extends AppCompatActivity {
     Context context = this;
@@ -26,6 +33,10 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        ScrollView scroll = (ScrollView)findViewById(R.id.scrollview);
+        Sequent.origin(scroll).anim(context, Animation.FADE_IN_UP).start();
+
+
         Log.e("onCreate: ", "Started");
         posterimage = (ImageView)findViewById(R.id.poster);
         back_image = (ImageView)findViewById(R.id.app_bar_image);
