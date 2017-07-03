@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
     public static String PATH ="3";
     public static String PATH1 = "movie";
     public static String SORT ="popular";
-    public static String API_KEY = "05947c19dcc1963b0c0e6fcb66a32aef";
+    //// TODO: 3/7/17 Enter your api key here 
+    public static String API_KEY = "ENTER YOUR API KEY HERE";
 
 
     public static URL buildUrl() {
